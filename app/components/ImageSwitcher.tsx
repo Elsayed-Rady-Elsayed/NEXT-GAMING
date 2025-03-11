@@ -18,7 +18,9 @@ const ImageSwitcher = ({ images, game }: { images: any[]; game: Game }) => {
     <div className=" flex flex-col gap-4 py-3 items-center px-6 rounded-xl bg-main  overflow-hidden">
       <div className=" flex  items-center gap-2 justify-between">
         <h1 className=" text-base text-white">{game.name}</h1>
-        <p className=" text-xs text-muted-foreground mt-1">Released {game.released}</p>
+        <p className=" text-xs text-muted-foreground mt-1">
+          Released {game.released}
+        </p>
       </div>
       <div className=" w-80 h-36 rounded-xl overflow-hidden relative ">
         {images?.map((image, index) => (
@@ -30,7 +32,12 @@ const ImageSwitcher = ({ images, game }: { images: any[]; game: Game }) => {
             className=" absolute inset-0"
             style={{ zIndex: activeIndex === index ? 1 : 0 }}
           >
-            <Image fill src={image.image} alt={`${image}`} className=" object-cover" />
+            <Image
+              fill
+              src={image.image}
+              alt={`${image}`}
+              className=" object-cover"
+            />
           </motion.div>
         ))}
       </div>
